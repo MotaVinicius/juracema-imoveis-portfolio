@@ -1,0 +1,1438 @@
+/* =========================================
+   FICHA DO IMÓVEL
+========================================= */
+
+.property-detail {
+
+    padding: 100px 8%;
+
+    background: var(--background);
+}
+
+
+.property-detail-container {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   GALERIA
+========================================= */
+
+.property-gallery {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.property-main-image {
+
+    height: 600px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #e8e1d5;
+}
+
+
+.property-main-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.property-detail-tag {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    background: white;
+
+    padding: 10px 15px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.property-thumbnails {
+    display: flex;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    gap: 12px;
+    margin-top: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-bottom: 5px;
+
+    scrollbar-width: thin;
+}
+
+
+.property-thumbnails button {
+    width: 90px;
+    min-width: 90px;
+    height: 70px;
+
+    flex: 0 0 90px;
+
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    background: white;
+}
+
+.property-thumbnails button {
+    opacity: 0.6;
+
+    transition:
+        opacity .25s ease,
+        outline .25s ease;
+}
+
+
+.property-thumbnails button:hover {
+    opacity: 1;
+}
+
+
+.property-thumbnails button.active {
+    opacity: 1;
+
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+
+.property-thumbnails img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================
+   INFORMAÇÕES
+========================================= */
+
+.property-detail-info {
+
+    padding-top: 15px;
+
+}
+
+
+.property-detail-info h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(34px, 3.5vw, 50px);
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    margin-bottom: 22px;
+
+}
+
+
+.property-detail-price {
+
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.property-detail-features {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--light-gray);
+
+    border-bottom: 1px solid var(--light-gray);
+
+    padding: 25px 0;
+
+    margin-bottom: 40px;
+
+}
+
+
+.property-detail-features div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    border-right: 1px solid var(--light-gray);
+
+    padding-left: 20px;
+
+}
+
+
+.property-detail-features div:first-child {
+
+    padding-left: 0;
+
+}
+
+
+.property-detail-features div:last-child {
+
+    border-right: none;
+
+}
+
+
+.property-detail-features strong {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+}
+
+
+.property-detail-features span {
+
+    color: var(--gray);
+
+    font-size: 11px;
+
+}
+
+
+.property-description {
+
+    margin-top: 20px;
+
+}
+
+
+.property-description p:not(.eyebrow) {
+
+    color: var(--gray);
+
+    line-height: 1.9;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   BOTÃO CONTATO
+========================================= */
+
+.property-contact-button {
+
+    display: inline-flex;
+
+    margin-top: 35px;
+
+    padding: 17px 25px;
+
+    background: var(--black);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+
+}
+
+
+.property-contact-button:hover {
+
+    background: var(--accent);
+
+    transform: translateY(-3px);
+
+}
+
+/* =========================================
+   COMPARTILHAMENTO
+========================================= */
+
+.property-share {
+    margin-top: 28px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.property-share>span {
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: var(--gray);
+}
+
+
+.property-share-actions {
+    display: flex;
+    gap: 8px;
+}
+
+
+.share-button {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ddd;
+    background: transparent;
+
+    color: var(--black);
+
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+
+.share-button:hover {
+    background: var(--black);
+    color: white;
+
+    border-color: var(--black);
+
+    transform: translateY(-2px);
+}
+
+.share-button svg {
+    width: 16px;
+    height: 16px;
+
+    fill: currentColor;
+
+    display: block;
+}
+
+.share-link-wrapper {
+    position: relative;
+}
+
+
+.copy-feedback {
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(100% + 10px);
+
+    transform:
+        translateX(-50%) translateY(5px);
+
+    padding: 6px 9px;
+
+    background: var(--black);
+    color: white;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        visibility .2s ease;
+}
+
+
+.copy-feedback.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateX(-50%) translateY(0);
+}
+
+/* =========================================
+   CARACTERÍSTICAS
+========================================= */
+
+.property-characteristics {
+
+    background: white;
+
+    padding: 80px 8%;
+
+}
+
+
+.property-characteristics-container {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+}
+
+
+.property-characteristics h2,
+.property-location-section h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+}
+
+
+.characteristics-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 45px;
+
+    border-top: 1px solid var(--light-gray);
+
+    border-left: 1px solid var(--light-gray);
+
+}
+
+
+.characteristic {
+
+    min-height: 110px;
+
+    padding: 23px 26px;
+
+    border-right: 1px solid var(--light-gray);
+
+    border-bottom: 1px solid var(--light-gray);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+.characteristic span {
+
+    color: var(--gray);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.characteristic strong {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================
+   LOCALIZAÇÃO
+========================================= */
+
+.property-location-section {
+
+    padding: 110px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.property-location-section>div:first-child p:not(.eyebrow) {
+
+    color: var(--gray);
+
+    margin-top: 25px;
+
+}
+
+
+.property-map {
+
+    height: 400px;
+
+    width: 100%;
+
+    background: #e8e1d5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    overflow: hidden;
+
+}
+
+.property-map iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+}
+
+
+
+/* =========================================
+   IMÓVEIS RELACIONADOS
+========================================= */
+
+.related-properties {
+    padding: 100px 8%;
+
+    background: white;
+}
+
+
+.related-properties-inner {
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+.related-properties .section-heading {
+    margin-bottom: 45px;
+}
+
+
+.related-properties .section-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    font-weight: 400;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   CARROSSEL
+========================================= */
+
+.related-carousel-wrapper {
+    position: relative;
+}
+
+
+.related-carousel-viewport {
+    overflow: hidden;
+}
+
+
+.related-carousel {
+    display: flex;
+
+    gap: 24px;
+
+    transition:
+        transform .4s ease;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.related-carousel .property-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+
+    min-width: 0;
+
+    background: white;
+}
+
+
+.related-carousel .property-image {
+    position: relative;
+
+    width: 100%;
+    height: 280px;
+
+    overflow: hidden;
+}
+
+
+.related-carousel .property-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.related-carousel .property-tag {
+    position: absolute;
+
+    top: 16px;
+    left: 16px;
+
+    padding: 8px 13px;
+
+    background: white;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.related-carousel .property-info {
+    padding: 24px;
+}
+
+
+.related-carousel .property-location {
+    color: var(--accent);
+
+    font-size: 10px;
+
+    margin-bottom: 10px;
+}
+
+
+.related-carousel .property-info h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    margin-bottom: 18px;
+
+    line-height: 1.2;
+}
+
+
+.related-carousel .property-price {
+    display: block;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+}
+
+
+.related-carousel .property-button {
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    background: var(--black);
+    color: white;
+
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+
+.related-carousel .property-button:hover {
+    background: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   BOTÕES DO CARROSSEL
+========================================= */
+.related-carousel-button {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    opacity: 0.7;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+
+.related-carousel-button img {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+.related-carousel-button:hover {
+    background: transparent;
+
+    opacity: 1;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+.related-carousel-button:active {
+    background: transparent;
+
+    transform:
+        translateY(-50%)
+        scale(0.95);
+}
+
+
+.related-carousel-button:focus {
+    background: transparent;
+    outline: none;
+}
+
+
+.related-carousel-button.prev {
+    left: -55px;
+}
+
+
+.related-carousel-button.next {
+    right: -55px;
+}
+
+
+.related-carousel-button:disabled {
+    background: transparent;
+
+    opacity: 0.25;
+
+    cursor: default;
+}
+/* =========================================
+   SETAS DA GALERIA
+========================================= */
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+
+    width: 46px;
+    height: 46px;
+
+    transform: translateY(-50%);
+
+    /* Fundo transparente */
+    background: transparent;
+
+    /* Círculo branco */
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+
+    color: white;
+
+    cursor: pointer;
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Esconde ← e → do HTML */
+    font-size: 0;
+
+    /* Sombra leve para funcionar em fotos claras */
+    filter:
+        drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+
+    transition:
+        background .25s ease,
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+
+/* Desenha a seta */
+
+.gallery-nav::before {
+    content: "";
+
+    width: 11px;
+    height: 11px;
+
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+}
+
+
+/* ANTERIOR */
+
+.gallery-nav.prev {
+    left: 20px;
+}
+
+
+.gallery-nav.prev::before {
+    transform: rotate(-135deg);
+
+    /* Compensa visualmente o chevron */
+    margin-left: 4px;
+}
+
+
+/* PRÓXIMA */
+
+.gallery-nav.next {
+    right: 20px;
+}
+
+
+.gallery-nav.next::before {
+    transform: rotate(45deg);
+
+    margin-right: 4px;
+}
+
+
+/* HOVER */
+
+.gallery-nav:hover {
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border-color: white;
+
+    transform:
+        translateY(-50%) scale(1.08);
+}
+
+
+/* CLIQUE */
+
+.gallery-nav:active {
+    transform:
+        translateY(-50%) scale(0.94);
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+/* =========================================
+   NOTEBOOKS
+========================================= */
+
+@media (max-width: 1400px) and (min-width: 1001px) {
+
+    .property-detail {
+        padding: 45px 5%;
+    }
+
+    .property-detail-container {
+        grid-template-columns: 1.15fr 1fr;
+        gap: 38px;
+    }
+
+    /* GALERIA */
+    .property-main-image {
+        height: 400px;
+    }
+
+    .property-thumbnails {
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .property-thumbnails button {
+        width: 68px;
+        height: 50px;
+    }
+
+    /* INFORMAÇÕES */
+    .property-detail-info {
+        padding-top: 0;
+    }
+
+    .property-detail-info .eyebrow {
+        margin-bottom: 12px;
+    }
+
+    .property-detail-info h1 {
+        font-size: clamp(30px, 2.6vw, 38px);
+        line-height: 1.1;
+        margin-bottom: 14px;
+    }
+
+    .property-detail-price {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* DADOS PRINCIPAIS */
+    .property-detail-features {
+        padding: 14px 0;
+        margin-bottom: 20px;
+    }
+
+    .property-detail-features div {
+        padding-left: 12px;
+    }
+
+    .property-detail-features strong {
+        font-size: 18px;
+    }
+
+    .property-detail-features span {
+        font-size: 9px;
+    }
+
+    /* DESCRIÇÃO */
+    .property-description p:not(.eyebrow) {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .property-description .eyebrow {
+        margin-bottom: 10px;
+    }
+
+    .description-toggle {
+        margin-top: 6px;
+    }
+
+    /* BOTÃO */
+    .property-contact-button {
+        margin-top: 18px;
+        padding: 12px 19px;
+        font-size: 11px;
+    }
+
+    /* COMPARTILHAMENTO */
+    .property-share {
+        margin-top: 15px;
+    }
+
+    .share-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .share-button svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* CARACTERÍSTICAS */
+    .property-characteristics {
+        padding: 50px 5%;
+    }
+
+    .property-characteristics h2 {
+        font-size: 34px;
+    }
+
+    .characteristics-grid {
+        margin-top: 25px;
+    }
+
+    .characteristic {
+        min-height: 85px;
+        padding: 15px 20px;
+    }
+
+    .characteristic strong {
+        font-size: 18px;
+    }
+
+    .characteristic span {
+        font-size: 9px;
+    }
+
+    /* IMÓVEIS RELACIONADOS */
+    .related-properties {
+        padding: 55px 5%;
+    }
+
+    .related-properties .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .related-properties .section-heading h2 {
+        font-size: 34px;
+        margin-top: 8px;
+    }
+
+    /* Cards menores */
+    .related-carousel {
+        gap: 18px;
+    }
+
+    .related-carousel .property-card {
+        flex: 0 0 calc((100% - 36px) / 3);
+    }
+
+    .related-carousel .property-image {
+        height: 220px;
+    }
+
+    .related-carousel .property-info {
+        padding: 18px;
+    }
+
+    .related-carousel .property-location {
+        font-size: 9px;
+        margin-bottom: 7px;
+    }
+
+    .related-carousel .property-info h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .related-carousel .property-price {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .related-carousel .property-button {
+        padding: 10px 15px;
+        font-size: 10px;
+    }
+
+    /* Setas um pouco menores */
+    .related-carousel-button.prev {
+        left: -40px;
+    }
+
+
+    .related-carousel-button.next {
+        right: -40px;
+    }
+
+
+    .related-carousel-button img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .related-carousel .property-card {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .related-properties {
+        padding: 70px 5%;
+    }
+
+
+    .related-carousel .property-card {
+        flex: 0 0 100%;
+    }
+
+
+    .related-carousel .property-image {
+        height: 260px;
+    }
+
+
+    .related-carousel-button {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .related-carousel-button.prev {
+        left: 8px;
+    }
+
+
+    .related-carousel-button.next {
+        right: 8px;
+    }
+
+}
+
+/* =========================================
+   DESCRIÇÃO DO IMÓVEL
+========================================= */
+
+.property-description {
+    line-height: 1.7;
+
+    margin: 0;
+
+    transition: max-height .3s ease;
+}
+
+
+.property-description.collapsed {
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+
+    overflow: hidden;
+}
+
+
+.description-toggle {
+    display: none;
+
+    margin-top: 10px;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: var(--accent);
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    letter-spacing: .5px;
+}
+
+
+.description-toggle:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   IMÓVEL NÃO ENCONTRADO
+========================================= */
+
+.property-not-found {
+
+    grid-column: 1 / -1;
+
+    max-width: 700px;
+
+    margin: 80px auto;
+
+    text-align: center;
+
+}
+
+
+.property-not-found h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 60px);
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+
+}
+
+
+.property-not-found p:not(.eyebrow) {
+
+    color: var(--gray);
+
+    line-height: 1.8;
+
+    margin-bottom: 10px;
+
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .property-detail-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .property-main-image {
+
+        height: 420px;
+
+    }
+
+
+    .characteristics-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .property-location-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .property-detail {
+        padding: 50px 5%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .property-detail-container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .property-gallery,
+    .property-detail-info {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .property-main-image {
+        width: 100%;
+        max-width: 100%;
+        height: 320px;
+    }
+
+    .property-main-image img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .property-detail-info h1 {
+        font-size: 32px;
+        line-height: 1.12;
+
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .gallery-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .gallery-nav::before {
+        width: 8px;
+        height: 8px;
+    }
+
+
+    .gallery-nav.prev {
+        left: 10px;
+    }
+
+
+    .gallery-nav.next {
+        right: 10px;
+    }
+
+
+    /* Miniaturas */
+    .property-thumbnails {
+    display: flex;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    gap: 12px;
+    margin-top: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-bottom: 5px;
+
+    scrollbar-width: thin;
+}
+
+    .property-thumbnails button {
+    width: 90px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    background: white;
+}
+
+    /* Evita elementos internos forçando largura */
+    .property-detail-features,
+    .property-description,
+    .property-share {
+        max-width: 100%;
+        min-width: 0;
+    }
+    .related-carousel-button.prev {
+        left: 8px;
+    }
+
+
+    .related-carousel-button.next {
+        right: 8px;
+    }
+
+
+    .related-carousel-button {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .related-carousel-button img {
+        width: 22px;
+        height: 22px;
+    }
+}

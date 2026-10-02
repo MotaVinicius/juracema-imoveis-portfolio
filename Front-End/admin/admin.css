@@ -1,0 +1,512 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --background: #f7f6f3;
+    --surface: #ffffff;
+    --text: #292824;
+    --muted: #77756f;
+    --accent: #9b8a68;
+    --border: #e5e2dc;
+    --dark: #2c2b27;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+
+.login-page {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+}
+
+
+/* =========================================
+   LADO DA MARCA
+========================================= */
+
+
+.login-brand {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: var(--dark);
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* detalhe decorativo */
+
+.login-brand::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    right: -220px;
+    bottom: -180px;
+}
+
+
+.login-brand::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    right: -100px;
+    bottom: -70px;
+}
+
+
+.brand-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 520px;
+}
+
+
+.brand-logo {
+    width: 170px;
+
+    height: auto;
+
+    margin-bottom: 90px;
+
+    filter: brightness(0) invert(1);
+}
+
+
+.eyebrow {
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: var(--accent);
+
+    margin-bottom: 18px;
+}
+
+
+.login-brand h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 4vw, 64px);
+
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    margin-bottom: 28px;
+}
+
+
+.login-brand h1 span {
+    display: block;
+
+    color: #c4b494;
+}
+
+
+.brand-description {
+    max-width: 430px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+.brand-footer {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    gap: 28px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+
+.login-container {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+}
+
+
+.login-box {
+    width: 100%;
+
+    max-width: 440px;
+}
+
+
+.login-header {
+    margin-bottom: 42px;
+}
+
+
+.login-header h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    margin-bottom: 12px;
+}
+
+
+.login-header p:last-child {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 9px;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    height: 54px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 2px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-group input::placeholder {
+    color: #aaa8a2;
+}
+
+
+.form-group input:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px rgba(155, 138, 104, 0.1);
+}
+
+
+/* =========================================
+   SENHA
+========================================= */
+
+
+.password-input {
+    position: relative;
+}
+
+
+.password-input input {
+    padding-right: 80px;
+}
+
+
+.toggle-password {
+    position: absolute;
+
+    right: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--accent);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   BOTÃO
+========================================= */
+
+
+.login-button {
+    width: 100%;
+
+    height: 56px;
+
+    border: none;
+
+    border-radius: 2px;
+
+    background: var(--dark);
+
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.login-button:hover {
+    background: #3b3934;
+
+    transform: translateY(-1px);
+}
+
+
+.login-button span {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   MENSAGEM
+========================================= */
+
+
+.login-message {
+    min-height: 20px;
+
+    margin-bottom: 14px;
+
+    font-size: 13px;
+
+    color: #b35d5d;
+}
+
+
+/* =========================================
+   VOLTAR
+========================================= */
+
+
+.back-link {
+    display: block;
+
+    margin-top: 28px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: color 0.2s ease;
+}
+
+
+.back-link:hover {
+    color: var(--text);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+
+@media (max-width: 900px) {
+
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+
+    .login-brand {
+        min-height: auto;
+
+        padding: 40px;
+
+        text-align: center;
+    }
+
+
+    .brand-content {
+        max-width: 600px;
+
+        margin: 0 auto;
+    }
+
+
+    .brand-logo {
+        margin-bottom: 45px;
+    }
+
+
+    .brand-description {
+        margin: 0 auto;
+    }
+
+
+    .brand-footer {
+        justify-content: center;
+
+        margin-top: 60px;
+    }
+
+
+    .login-container {
+        padding: 70px 30px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .login-brand {
+        padding: 35px 25px;
+    }
+
+
+    .brand-logo {
+        width: 145px;
+    }
+
+
+    .login-brand h1 {
+        font-size: 38px;
+    }
+
+
+    .brand-footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .login-container {
+        padding: 55px 22px;
+    }
+
+
+    .login-header h2 {
+        font-size: 34px;
+    }
+
+}

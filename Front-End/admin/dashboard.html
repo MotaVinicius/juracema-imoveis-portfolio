@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel Administrativo | Juracema Mota Imóveis</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="icon" href="../Imagens/FavIcon.png" type="image/x-icon">
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="admin-header">
+
+        <div class="admin-brand">
+
+            <img src="../Imagens/LogoJM.png" alt="Juracema Mota Imóveis">
+
+            <div class="admin-brand-text">
+
+                <span>
+                    ÁREA ADMINISTRATIVA
+                </span>
+
+                <strong>
+                    Juracema Mota Imóveis
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-actions">
+
+            <a href="../" target="_blank" rel="noopener noreferrer" class="view-site">
+                Ver site →
+            </a>
+
+            <button class="logout-button" id="logout-button" type="button">
+                Sair
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="dashboard">
+
+        <!-- CABEÇALHO -->
+
+        <section class="dashboard-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    PAINEL DE CONTROLE
+                </p>
+
+                <h1>
+                    Olá, Juracema.
+                </h1>
+
+                <p>
+                    Gerencie os imóveis disponíveis no seu site.
+                </p>
+
+            </div>
+
+
+            <a href="imovel.html" class="primary-button">
+                + Cadastrar imóvel
+            </a>
+
+        </section>
+
+
+        <!-- ESTATÍSTICAS -->
+
+        <section class="dashboard-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🏠
+                </div>
+
+                <div>
+
+                    <span>
+                        Total de imóveis
+                    </span>
+
+                    <strong id="total-properties">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ★
+                </div>
+
+                <div>
+
+                    <span>
+                        Em destaque
+                    </span>
+
+                    <strong id="featured-properties">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Disponíveis
+                    </span>
+
+                    <strong id="available-properties">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LISTAGEM -->
+
+        <section class="properties-management">
+
+            <div class="management-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PORTFÓLIO
+                    </p>
+
+                    <h2>
+                        Meus imóveis
+                    </h2>
+
+                </div>
+
+
+                <div class="management-actions">
+
+                    <!-- BUSCA -->
+
+                    <div class="search-input">
+
+                        <span>
+                            ⌕
+                        </span>
+
+                        <input type="text" id="property-search" placeholder="Buscar imóvel...">
+
+                    </div>
+
+
+                    <!-- FILTRO POR TIPO -->
+
+                    <select id="property-filter">
+
+                        <option value="todos">
+                            Todos os tipos
+                        </option>
+
+                        <option value="APARTAMENTO">
+                            Apartamentos
+                        </option>
+
+                        <option value="CASA">
+                            Casas
+                        </option>
+
+                        <option value="TERRENO">
+                            Terrenos
+                        </option>
+
+                        <option value="COMERCIAL">
+                            Comerciais
+                        </option>
+
+                        <option value="CHACARA">
+                            Chácaras
+                        </option>
+
+                    </select>
+
+
+                    <!-- FILTRO DE DISPONIBILIDADE -->
+
+                    <select id="property-available-filter">
+
+                        <option value="todos">
+                            Todos os status
+                        </option>
+
+                        <option value="disponivel">
+                            Disponíveis
+                        </option>
+
+                        <option value="indisponivel">
+                            Indisponíveis
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABELA -->
+
+            <div class="properties-table-wrapper">
+
+                <table class="properties-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Imóvel
+                            </th>
+
+                            <th>
+                                Tipo
+                            </th>
+
+                            <th>
+                                Preço
+                            </th>
+
+                            <th>
+                                Disponibilidade
+                            </th>
+
+                            <th>
+                                Destaque
+                            </th>
+
+                            <th>
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="properties-table-body">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- ESTADO VAZIO -->
+
+            <div id="empty-state" class="empty-state">
+
+                <div>
+                    🏠
+                </div>
+
+                <h3>
+                    Nenhum imóvel encontrado
+                </h3>
+
+                <p>
+                    Tente alterar sua busca ou cadastre um novo imóvel.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL DE EXCLUSÃO -->
+
+    <div class="modal-overlay" id="delete-modal">
+
+        <div class="delete-modal">
+
+            <div class="modal-icon">
+                !
+            </div>
+
+            <h2>
+                Excluir imóvel?
+            </h2>
+
+            <p>
+                Tem certeza que deseja excluir este imóvel?
+                Esta ação não poderá ser desfeita.
+            </p>
+
+            <div class="modal-actions">
+
+                <button class="cancel-button" id="cancel-delete" type="button">
+                    Cancelar
+                </button>
+
+                <button class="delete-button" id="confirm-delete" type="button">
+                    Excluir imóvel
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../config.js"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

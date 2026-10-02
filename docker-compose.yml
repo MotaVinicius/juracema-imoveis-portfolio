@@ -1,0 +1,95 @@
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: juracema-postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: imoveis
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - juracema-network
+
+  api:
+    build:
+      context: ./Back-End
+      dockerfile: Dockerfile
+
+    container_name: juracema-api
+
+    restart: unless-stopped
+
+    depends_on:
+      - postgres
+
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+
+      DB_URL: ${DB_URL}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+
+      JWT_SECRET: ${JWT_SECRET}
+
+      ADMIN_NAME: ${ADMIN_NAME}
+      ADMIN_USERNAME: ${ADMIN_USERNAME}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+
+      AWS_REGION: ${AWS_REGION}
+      S3_BUCKET_NAME: ${S3_BUCKET_NAME}
+      S3_PUBLIC_URL: ${S3_PUBLIC_URL}
+
+    volumes:
+      - uploads_data:/app/uploads
+        
+    networks:
+      - juracema-network
+
+  
+  frontend:
+    build:
+      context: ./Front-End
+      dockerfile: Dockerfile
+
+    container_name:
+      juracema_frontend
+
+    restart:
+      unless-stopped
+
+    depends_on:
+      - api
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      - certbot_www:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt:ro
+
+    networks:
+      - juracema-network
+
+  certbot:
+    image: certbot/certbot:latest
+
+    volumes:
+      - certbot_www:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt
+
+volumes:
+  postgres_data:
+  uploads_data:
+  certbot_www:
+  certbot_conf:
+
+networks:
+  juracema-network:

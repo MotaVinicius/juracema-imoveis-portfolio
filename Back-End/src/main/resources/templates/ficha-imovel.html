@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{SEO_TITLE}}</title>
+
+    <meta name="description" id="meta-description-imovel" content="{{SEO_DESCRIPTION}}">
+
+    <link rel="canonical" id="canonical-imovel" href="{{SEO_URL}}">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" id="og-title" content="{{SEO_TITLE}}">
+
+    <meta property="og:description" id="og-description" content="{{SEO_DESCRIPTION}}">
+
+    <meta property="og:url" id="og-url" content="{{SEO_URL}}">
+
+    <meta property="og:image" id="og-image" content="{{SEO_IMAGE}}">
+
+    <meta property="og:site_name" content="Juracema Mota Imóveis">
+
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="ficha-imovel.css">
+    <link rel="icon" href="Imagens/FavIcon.png" type="image/x-icon">
+</head>
+
+
+<body>
+
+
+    <header class="header">
+
+        <a href="/" class="logo">
+            <img src="Imagens/LogoJM.png" alt="Juracema Mota Imóveis">
+        </a>
+
+        <nav class="nav" id="mobile-nav">
+
+            <a href="/">
+                Início
+            </a>
+
+            <a href="/imoveis">
+                Imóveis
+            </a>
+
+            <a href="/sobre">
+                Sobre mim
+            </a>
+
+            <a href="#contato">
+                Contato
+            </a>
+
+        </nav>
+
+        <a href="#contato" class="header-button">
+            Fale comigo
+        </a>
+
+        <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- FICHA DO IMÓVEL -->
+
+        <section class="property-detail">
+
+            <div class="property-detail-container">
+
+
+                <!-- GALERIA -->
+
+                <div class="property-gallery">
+
+                    <div class="property-main-image">
+
+                        <img id="property-main-image" src="imagens/placeholder-imovel.png" alt="Imagem do imóvel">
+
+                        <button type="button" class="gallery-nav prev" id="gallery-prev" aria-label="Imagem anterior">
+                            ←
+                        </button>
+
+                        <button type="button" class="gallery-nav next" id="gallery-next" aria-label="Próxima imagem">
+                            →
+                        </button>
+
+                        <span id="property-tag" class="property-detail-tag">
+                            IMÓVEL
+                        </span>
+
+                    </div>
+
+
+                    <div class="property-thumbnails" id="property-thumbnails">
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- INFORMAÇÕES -->
+
+                <div class="property-detail-info">
+
+                    <p id="property-location" class="eyebrow">
+
+                    </p>
+
+
+                    <h1 id="property-title">
+
+                    </h1>
+
+
+                    <strong id="property-price" class="property-detail-price">
+
+                    </strong>
+
+
+                    <div class="property-detail-features">
+
+                        <div>
+                            <strong id="property-bedrooms">
+
+                            </strong>
+
+                            <span>
+                                Quartos
+                            </span>
+                        </div>
+
+
+                        <div>
+                            <strong id="property-bathrooms">
+
+                            </strong>
+
+                            <span>
+                                Banheiros
+                            </span>
+                        </div>
+
+
+                        <div id="total-area-feature">
+
+                            <strong id="property-area"></strong>
+
+                            <span>
+                                Área total
+                            </span>
+
+                        </div>
+
+                        <div id="built-area-feature">
+
+                            <strong id="property-built-area">
+
+                            </strong>
+
+                            <span id="built-area-label">
+                                Área construída
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="property-description">
+
+                        <p class="eyebrow">
+                            SOBRE O IMÓVEL
+                        </p>
+
+                        <div class="property-description-wrapper">
+
+                            <p id="property-description" class="property-description collapsed"></p>
+
+                            <button type="button" id="description-toggle" class="description-toggle">
+                                Ver mais ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <a id="whatsapp-button" href="#" class="property-contact-button" target="_blank"
+                        rel="noopener noreferrer">
+                        Tenho interesse neste imóvel →
+                    </a>
+
+                    <div class="property-share">
+
+                        <span>
+                            Compartilhar
+                        </span>
+
+                        <div class="property-share-actions">
+
+                            <a href="#" id="share-whatsapp" class="share-button" target="_blank"
+                                rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.89-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.99c-.003 5.45-4.437 9.889-9.887 9.889" />
+                                </svg>
+                            </a>
+
+                            <a href="#" id="share-facebook" class="share-button" target="_blank"
+                                rel="noopener noreferrer" aria-label="Compartilhar no Facebook"
+                                title="Compartilhar no Facebook">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.099 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.024 1.792-4.695 4.533-4.695 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.49 0-1.956.931-1.956 1.887v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.099 24 12.073" />
+                                </svg>
+                            </a>
+
+                            <a href="#" id="share-x" class="share-button" target="_blank" rel="noopener noreferrer"
+                                aria-label="Compartilhar no X">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817-5.967 6.817H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+
+                            <div class="share-link-wrapper">
+
+                                <button type="button" id="share-link" class="share-button"
+                                    aria-label="Copiar link do imóvel" title="Copiar link">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+
+                                <span class="copy-feedback" id="copy-feedback">
+                                    Copiado!
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARACTERÍSTICAS -->
+
+        <section class="property-characteristics">
+
+            <div class="property-characteristics-container">
+
+                <div>
+
+                    <p class="eyebrow">
+                        DETALHES
+                    </p>
+
+                    <h2>
+                        Características do imóvel
+                    </h2>
+
+                </div>
+
+
+                <div class="characteristics-grid">
+
+                    <div class="characteristic">
+
+                        <span>
+                            Tipo
+                        </span>
+
+                        <strong id="characteristic-type">
+
+                        </strong>
+
+                    </div>
+
+                    <div class="characteristic" id="characteristic-total-area">
+
+                        <span>
+                            Área total
+                        </span>
+
+                        <strong id="characteristic-area">
+
+                        </strong>
+
+                    </div>
+
+                    <div class="characteristic">
+
+                        <span id="characteristic-built-area-label">
+                            Área construída
+                        </span>
+
+                        <strong id="characteristic-built-area">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <div class="characteristic">
+
+                        <span>
+                            Quartos
+                        </span>
+
+                        <strong id="characteristic-bedrooms">
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="characteristic">
+
+                        <span>
+                            Banheiros
+                        </span>
+
+                        <strong id="characteristic-bathrooms">
+
+                        </strong>
+
+                    </div>
+
+
+                    <div class="characteristic">
+
+                        <span>
+                            Vagas
+                        </span>
+
+                        <strong id="characteristic-garage">
+
+                        </strong>
+
+                    </div>
+
+                    <div class="characteristic">
+
+                        <span>
+                            Condomínio
+                        </span>
+
+                        <strong id="characteristic-condominio">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="characteristic">
+
+                        <span>
+                            IPTU
+                        </span>
+
+                        <strong id="characteristic-iptu">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <div class="characteristic">
+
+                        <span>
+                            Aceita permuta
+                        </span>
+
+                        <strong id="characteristic-exchange">
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOCALIZAÇÃO -->
+
+        <section class="property-location-section">
+
+            <div>
+
+                <p class="eyebrow">
+                    LOCALIZAÇÃO
+                </p>
+
+                <h2>
+                    Onde está localizado
+                </h2>
+
+                <p id="property-address">
+                    Indaiatuba • São Paulo
+                </p>
+
+            </div>
+
+
+            <div class="property-map">
+
+                <iframe id="property-map-frame" loading="lazy" allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+            </div>
+
+        </section>
+
+        <!-- RELACIONADOS -->
+
+        <section class="related-properties">
+
+            <div class="related-properties-inner">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            VEJA TAMBÉM
+                        </p>
+
+                        <h2>
+                            Imóveis relacionados
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="related-carousel-wrapper">
+
+                    <button type="button" class="related-carousel-button prev" id="related-prev"
+                        aria-label="Imóvel anterior">
+                        <img src="Imagens/left.png" alt="Anterior">
+                    </button>
+
+
+                    <div class="related-carousel-viewport">
+
+                        <div class="related-carousel" id="related-properties">
+                        </div>
+
+                    </div>
+
+
+                    <button type="button" class="related-carousel-button next" id="related-next"
+                        aria-label="Próximo imóvel">
+                        <img src="Imagens/right.png" alt="Próximo">
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+
+        <section class="cta" id="contato">
+
+            <div>
+
+                <p class="eyebrow">
+                    GOSTOU DESTE IMÓVEL?
+                </p>
+
+                <h2>
+                    Vamos conversar sobre ele.
+                </h2>
+
+                <p>
+                    Entre em contato para saber mais
+                    informações ou agendar uma visita.
+                </p>
+
+                <a href="https://wa.me/5519993316550?text=Olá!%20Tenho%20interesse%20em%20um%20dos%20imóveis%20do%20site."
+                    class="button-light" target="_blank" rel="noopener noreferrer">
+                    Falar pelo WhatsApp →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            JURACEMA MOTA IMÓVEIS
+        </div>
+
+        <div>
+
+            <span>
+                CRECI 131690-F
+            </span>
+
+            <span>
+                Indaiatuba • São Paulo
+            </span>
+
+        </div>
+
+        <div class="footer-links">
+            <a href="https://www.instagram.com/juracema_mota_imoveis" target="_blank"><img
+                    src="Imagens/instagram-96.png" alt="Instagram Icon"> Instagram</a>
+            <a href="https://wa.me/5519993316550?text=Olá!%20Vim%20pelo%20Site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20imóveis."
+                target="_blank"><img src="Imagens/whatsapp-96.png" alt="WhastApp Icon"> WhatsApp</a>
+        </div>
+
+    </footer>
+    <script src="config.js"></script>
+    <script src="menu.js"></script>
+    <script src="ficha-imovel.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+---
+- name: Configurar servidor Juracema
+  hosts: juracema
+  become: true
+
+  vars:
+    docker_arch_map:
+      x86_64: amd64
+      aarch64: arm64
+
+    docker_arch: "{{ docker_arch_map[ansible_architecture] }}"
+
+  tasks:
+
+    # =========================================
+    # PACOTES BÁSICOS
+    # =========================================
+
+    - name: Atualizar cache do apt
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+
+    - name: Instalar pacotes basicos
+      ansible.builtin.apt:
+        name:
+          - git
+          - curl
+          - ca-certificates
+          - gnupg
+        state: present
+
+
+    # =========================================
+    # DOCKER - REMOVER PACOTES ANTIGOS
+    # =========================================
+
+    - name: Remover pacotes Docker conflitantes
+      ansible.builtin.apt:
+        name:
+          - docker.io
+          - docker-compose
+          - docker-compose-v2
+          - podman-docker
+        state: absent
+
+
+    # =========================================
+    # DOCKER - REPOSITÓRIO OFICIAL
+    # =========================================
+
+    - name: Criar diretorio de chaves do apt
+      ansible.builtin.file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: "0755"
+
+
+    - name: Baixar chave GPG oficial do Docker
+      ansible.builtin.get_url:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        dest: /etc/apt/keyrings/docker.asc
+        mode: "0644"
+
+
+    - name: Adicionar repositorio oficial do Docker
+      ansible.builtin.apt_repository:
+        repo: >-
+          deb [arch={{ docker_arch }}
+          signed-by=/etc/apt/keyrings/docker.asc]
+          https://download.docker.com/linux/ubuntu
+          {{ ansible_distribution_release }} stable
+        filename: docker
+        state: present
+
+
+    - name: Atualizar cache apos adicionar repositorio Docker
+      ansible.builtin.apt:
+        update_cache: true
+
+
+    - name: Instalar Docker Engine e Compose v2
+      ansible.builtin.apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: present
+
+
+    - name: Recarregar configuracoes do systemd
+      ansible.builtin.systemd:
+        daemon_reload: true
+
+
+    - name: Garantir que docker.socket esteja iniciado
+      ansible.builtin.systemd:
+          name: docker.socket
+          state: started
+          enabled: true
+
+
+    - name: Garantir que Docker esteja iniciado
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+
+    - name: Adicionar usuario ubuntu ao grupo Docker
+      ansible.builtin.user:
+        name: ubuntu
+        groups: docker
+        append: true
+
+
+    # =========================================
+    # SWAP - 2 GB
+    # =========================================
+
+    - name: Verificar se swapfile existe
+      ansible.builtin.stat:
+        path: /swapfile
+      register: swapfile
+
+
+    - name: Criar swapfile de 2 GB
+      ansible.builtin.command:
+        cmd: fallocate -l 2G /swapfile
+      when: not swapfile.stat.exists
+
+
+    - name: Configurar permissoes do swapfile
+      ansible.builtin.file:
+        path: /swapfile
+        owner: root
+        group: root
+        mode: "0600"
+
+
+    - name: Formatar swapfile
+      ansible.builtin.command:
+        cmd: mkswap /swapfile
+      when: not swapfile.stat.exists
+
+
+    - name: Verificar swap ativo
+      ansible.builtin.command:
+        cmd: swapon --show=NAME --noheadings
+      register: swap_status
+      changed_when: false
+
+
+    - name: Ativar swap
+      ansible.builtin.command:
+        cmd: swapon /swapfile
+      when: "'/swapfile' not in swap_status.stdout"
+
+
+    - name: Garantir swap no fstab
+      ansible.builtin.lineinfile:
+        path: /etc/fstab
+        line: "/swapfile none swap sw 0 0"
+        state: present
+
+
+    # =========================================
+    # APLICAÇÃO
+    # =========================================
+
+    - name: Criar diretorio para o projeto
+      ansible.builtin.file:
+        path: /opt/juracema-system
+        state: directory
+        owner: ubuntu
+        group: ubuntu
+        mode: "0755"
+
+
+    - name: Clonar repositorio do projeto
+      ansible.builtin.git:
+        repo_url: "https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git"
+        dest: /opt/juracema-system
+        version: main
+        update: true
+        accept_hostkey: true
+      become: true
+      become_user: ubuntu
+
+
+    # =========================================
+    # CERTIFICADO LET'S ENCRYPT
+    # =========================================
+
+    - name: Criar script de renovacao do certificado
+      ansible.builtin.copy:
+        dest: /usr/local/bin/renew-juracema-cert.sh
+        owner: root
+        group: root
+        mode: "0755"
+        content: |
+          #!/bin/bash
+
+          cd /opt/juracema-system || exit 1
+
+          /usr/bin/docker compose run --rm certbot renew --quiet
+
+          /usr/bin/docker exec juracema-frontend nginx -s reload
+
+
+    - name: Configurar renovacao automatica do certificado
+      ansible.builtin.cron:
+        name: "Renovar certificado Juracema"
+        user: root
+        minute: "0"
+        hour: "3"
+        job: "/usr/local/bin/renew-juracema-cert.sh >> /var/log/juracema-certbot.log 2>&1"

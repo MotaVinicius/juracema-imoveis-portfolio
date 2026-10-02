@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Imóvel | Área Administrativa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="imovel.css">
+    <link rel="icon" href="../Imagens/FavIcon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="admin-header">
+
+        <div class="admin-brand">
+
+            <img src="../Imagens/LogoJM.png" alt="Juracema Mota Imóveis">
+
+            <div class="admin-brand-text">
+
+                <span>
+                    ÁREA ADMINISTRATIVA
+                </span>
+
+                <strong>
+                    Juracema Mota Imóveis
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-actions">
+
+            <a href="dashboard.html" class="view-site">
+                ← Voltar ao painel
+            </a>
+
+            <button class="logout-button" id="logout-button" type="button">
+                Sair
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="property-form-page">
+
+        <!-- CABEÇALHO -->
+
+        <section class="form-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    PORTFÓLIO
+                </p>
+
+                <h1 id="form-title">
+                    Cadastrar imóvel
+                </h1>
+
+                <p id="form-description">
+                    Preencha as informações do imóvel para adicioná-lo ao seu portfólio.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+
+        <form id="property-form">
+
+
+            <!-- INFORMAÇÕES PRINCIPAIS -->
+
+            <section class="form-section">
+
+                <div class="form-section-heading">
+
+                    <div>
+
+                        <span class="section-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Informações do Imóvel
+                            </h2>
+
+                            <p>
+                                Dados principais que serão exibidos no site.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <!-- TÍTULO -->
+
+                    <div class="form-field full">
+
+                        <label for="titulo">
+                            Título do imóvel
+                        </label>
+
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Casa contemporânea" required>
+
+                    </div>
+
+
+                    <!-- CIDADE -->
+
+                    <div class="form-field">
+
+                        <label for="cidade">
+                            Cidade
+                        </label>
+
+                        <input type="text" id="cidade" name="cidade" placeholder="Ex: Indaiatuba" required>
+
+                    </div>
+
+
+                    <!-- BAIRRO -->
+
+                    <div class="form-field">
+
+                        <label for="bairro">
+                            Bairro
+                        </label>
+
+                        <input type="text" id="bairro" name="bairro" placeholder="Ex: Jardim Esplanada" required>
+
+                    </div>
+
+
+                    <!-- UF -->
+
+                    <div class="form-field">
+
+                        <label for="uf">
+                            UF
+                        </label>
+
+                        <input type="text" id="uf" name="uf" placeholder="Ex: SP" maxlength="2" required>
+
+                    </div>
+
+
+                    <!-- PREÇO -->
+
+                    <div class="form-field">
+
+                        <label for="preco">
+                            Preço
+                        </label>
+
+                        <input type="text" id="preco" name="preco" placeholder="R$ 0,00" inputmode="numeric"
+                            autocomplete="off" required>
+
+                    </div>
+
+
+                    <!-- TIPO -->
+
+                    <div class="form-field">
+
+                        <label for="tipo">
+                            Tipo de imóvel
+                        </label>
+
+                        <select id="tipo" name="tipo" required>
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="CASA">
+                                Casa
+                            </option>
+
+                            <option value="APARTAMENTO">
+                                Apartamento
+                            </option>
+
+                            <option value="TERRENO">
+                                Terreno
+                            </option>
+
+                            <option value="COMERCIAL">
+                                Comercial
+                            </option>
+
+                            <option value="CHACARA">
+                                Chácara
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ENDEREÇO INTERNO -->
+
+            <section class="form-section">
+
+                <div class="form-section-heading">
+
+                    <div>
+
+                        <span class="section-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Endereço do imóvel
+                            </h2>
+
+                            <p>
+                                Informações utilizadas internamente e em integrações.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-field">
+
+                        <label for="cep">
+                            CEP
+                        </label>
+
+                        <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" inputmode="numeric"
+                            autocomplete="postal-code">
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="rua">
+                            Rua
+                        </label>
+
+                        <input type="text" id="rua" name="rua" placeholder="Ex: Rua das Flores">
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="numero">
+                            Número
+                        </label>
+
+                        <input type="text" id="numero" name="numero" placeholder="Ex: 120">
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="complemento">
+                            Complemento
+                        </label>
+
+                        <input type="text" id="complemento" name="complemento" placeholder="Ex: Casa 2">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CARACTERÍSTICAS -->
+
+            <section class="form-section">
+
+                <div class="form-section-heading">
+
+                    <div>
+
+                        <span class="section-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Características
+                            </h2>
+
+                            <p>
+                                Informe as características disponíveis para este imóvel.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-field">
+
+                        <label for="quartos">
+                            Quartos
+                        </label>
+
+                        <input type="number" id="quartos" name="quartos" min="0" placeholder="Ex: 3">
+
+                        <small>
+                            Deixe vazio caso não se aplique.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="banheiros">
+                            Banheiros
+                        </label>
+
+                        <input type="number" id="banheiros" name="banheiros" min="0" placeholder="Ex: 2">
+
+                        <small>
+                            Deixe vazio caso não se aplique.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="area">
+                            Área Total (m²)
+                        </label>
+
+                        <input type="number" id="area" name="area" min="0.01" step="0.01" placeholder="Ex: 120"
+                            required>
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="areaConstruida">
+                            Área Construída/Útil (m²)
+                        </label>
+
+                        <input type="number" id="areaConstruida" name="areaConstruida" min="0.01" step="0.01"
+                            placeholder="Ex: 180">
+
+                        <small>
+                            Deixe vazio caso não se aplique.
+                        </small>
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="vagas">
+                            Vagas de Garagem
+                        </label>
+
+                        <input type="number" id="vagas" name="vagas" min="0" placeholder="Ex: 2">
+
+                        <small>
+                            Deixe vazio caso não possua.
+                        </small>
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="condominio">
+                            Condomínio
+                        </label>
+
+                        <input type="text" id="condominio" name="condominio" placeholder="R$ 0,00" inputmode="numeric"
+                            autocomplete="off">
+
+                        <small>
+                            Deixe vazio caso não possua.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="iptu">
+                            IPTU
+                        </label>
+
+                        <input type="text" id="iptu" name="iptu" placeholder="R$ 0,00" inputmode="numeric"
+                            autocomplete="off">
+
+                        <small>
+                            Deixe vazio caso não possua.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DESCRIÇÃO -->
+
+            <section class="form-section">
+
+                <div class="form-section-heading">
+
+                    <div>
+
+                        <span class="section-number">
+                            04
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Descrição
+                            </h2>
+
+                            <p>
+                                Apresente os principais detalhes do imóvel.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="descricao">
+                        Descrição do Imóvel
+                    </label>
+
+                    <textarea id="descricao" name="descricao" rows="7"
+                        placeholder="Descreva o imóvel, seus ambientes, localização e principais diferenciais..."
+                        required></textarea>
+
+                    <small>
+                        Uma descrição clara ajuda o cliente a conhecer melhor o imóvel.
+                    </small>
+
+                </div>
+
+            </section>
+
+            <!-- INFORMAÇÕES INTERNAS -->
+
+            <section class="form-section">
+
+                <div class="form-section-heading">
+
+                    <div>
+
+                        <span class="section-number">
+                            05
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Informações internas
+                            </h2>
+
+                            <p>
+                                Estes dados são visíveis somente na área administrativa.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-field">
+
+                        <label for="nomeProprietario">
+                            Nome do Proprietário
+                        </label>
+
+                        <input type="text" id="nomeProprietario" name="nomeProprietario"
+                            placeholder="Nome do proprietário">
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="telefoneProprietario">
+                            Telefone do Proprietário
+                        </label>
+
+                        <input type="text" id="telefoneProprietario" name="telefoneProprietario"
+                            placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric" autocomplete="tel">
+
+                    </div>
+
+
+                    <div class="form-field full">
+
+                        <label for="anotacoesInternas">
+                            Anotações Internas
+                        </label>
+
+                        <textarea id="anotacoesInternas" name="anotacoesInternas" rows="5"
+                            placeholder="Informações internas sobre o imóvel, proprietário, visitas, negociações..."></textarea>
+
+                        <small>
+                            Esta informação não será exibida publicamente.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- IMAGENS -->
+
+            <section class="form-section">
+
+                <div class="form-section-heading">
+
+                    <div>
+
+                        <span class="section-number">
+                            06
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Imagens
+                            </h2>
+
+                            <p>
+                                Adicione as imagens que serão exibidas no anúncio.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="image-upload">
+
+                    <label for="imagens" class="upload-area">
+
+                        <span class="upload-icon">
+                            +
+                        </span>
+
+                        <strong>
+                            Adicionar imagens
+                        </strong>
+
+                        <small>
+                            Clique para selecionar uma ou mais imagens
+                        </small>
+
+                    </label>
+
+
+                    <input type="file" id="imagens" name="imagens" accept="image/*" multiple>
+
+
+                    <div id="image-preview" class="image-preview"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONFIGURAÇÕES -->
+
+            <section class="form-section">
+
+                <div class="form-section-heading">
+
+                    <div>
+
+                        <span class="section-number">
+                            07
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Configurações
+                            </h2>
+
+                            <p>
+                                Defina como o imóvel será apresentado no site.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-box">
+
+                    <label class="checkbox-option">
+
+                        <input type="checkbox" id="destaque" name="destaque">
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>
+
+                            <strong>
+                                Imóvel em destaque
+                            </strong>
+
+                            <small>
+                                Exibir este imóvel na seção de destaques da página inicial.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="checkbox-option">
+
+                        <input type="checkbox" id="disponivel" name="disponivel" checked>
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>
+
+                            <strong>
+                                Imóvel disponível
+                            </strong>
+
+                            <small>
+                                O imóvel será exibido normalmente no catálogo.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <!-- PERMUTA -->
+
+                    <label class="checkbox-option">
+
+                        <input type="checkbox" id="permuta" name="permuta">
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>
+
+                            <strong>
+                                Aceita permuta
+                            </strong>
+
+                            <small>
+                                Marque caso o proprietário aceite negociação por permuta.
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- BOTÕES -->
+
+            <div class="form-actions">
+
+                <a href="dashboard.html" class="cancel-button">
+                    Cancelar
+                </a>
+
+                <button type="submit" class="save-button" id="save-button">
+
+                    <span id="save-button-text">
+                        Salvar imóvel
+                    </span>
+
+                </button>
+
+            </div>
+
+        </form>
+
+        <div class="feedback-modal-overlay" id="feedback-modal">
+
+            <div class="feedback-modal">
+
+                <div class="feedback-modal-icon" id="feedback-modal-icon">
+                    ✓
+                </div>
+
+                <h2 id="feedback-modal-title">
+                    Sucesso
+                </h2>
+
+                <p id="feedback-modal-message">
+                    Operação realizada com sucesso.
+                </p>
+
+                <button type="button" class="feedback-modal-button" id="feedback-modal-button">
+                    Continuar
+                </button>
+
+            </div>
+
+        </div>
+        <div class="confirm-modal-overlay" id="confirm-modal">
+
+            <div class="confirm-modal">
+
+                <div class="confirm-modal-icon">
+                    !
+                </div>
+
+                <h2 id="confirm-modal-title">
+                    Confirmar ação
+                </h2>
+
+                <p id="confirm-modal-message">
+                    Deseja continuar?
+                </p>
+
+                <div class="confirm-modal-actions">
+
+                    <button type="button" class="confirm-cancel-button" id="confirm-cancel-button">
+                        Cancelar
+                    </button>
+
+                    <button type="button" class="confirm-action-button" id="confirm-action-button">
+                        Confirmar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../config.js"></script>
+    <script src="imovel.js"></script>
+
+</body>
+
+</html>

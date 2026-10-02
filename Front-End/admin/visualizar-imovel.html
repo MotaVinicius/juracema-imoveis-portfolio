@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visualizar imóvel | Área Administrativa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="visualizar-imovel.css">
+
+    <link rel="icon" href="../Imagens/FavIcon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <header class="admin-header">
+
+        <div class="admin-brand">
+
+            <img src="../Imagens/LogoJM.png" alt="Juracema Mota Imóveis">
+
+            <div class="admin-brand-text">
+
+                <span>
+                    ÁREA ADMINISTRATIVA
+                </span>
+
+                <strong>
+                    Juracema Mota Imóveis
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div class="admin-header-actions">
+
+            <a href="dashboard.html" class="view-site">
+                ← Voltar ao painel
+            </a>
+
+            <button class="logout-button" id="logout-button" type="button">
+                Sair
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="property-view-page">
+
+        <!-- CABEÇALHO -->
+
+        <section class="property-view-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    IMÓVEL
+                </p>
+
+                <h1 id="titulo">
+                    Carregando imóvel...
+                </h1>
+
+                <p id="localizacao">
+                    —
+                </p>
+
+            </div>
+
+
+            <div class="property-view-actions">
+
+                <a href="#" id="edit-button" class="edit-button">
+                    Editar imóvel
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES PRINCIPAIS -->
+
+        <section class="view-section">
+
+            <div class="view-section-heading">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h2>
+                        Informações do imóvel
+                    </h2>
+
+                    <p>
+                        Dados principais cadastrados para este imóvel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="information-grid">
+
+                <div class="information-item">
+
+                    <span>
+                        Código
+                    </span>
+
+                    <strong id="id-imovel">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Tipo
+                    </span>
+
+                    <strong id="tipo">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Preço
+                    </span>
+
+                    <strong id="preco">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Área total
+                    </span>
+
+                    <strong id="area">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Área construída
+                    </span>
+
+                    <strong id="areaConstruida">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Quartos
+                    </span>
+
+                    <strong id="quartos">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Banheiros
+                    </span>
+
+                    <strong id="banheiros">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Vagas
+                    </span>
+
+                    <strong id="vagas">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Condomínio
+                    </span>
+
+                    <strong id="condominio">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        IPTU
+                    </span>
+
+                    <strong id="iptu">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ENDEREÇO -->
+
+        <section class="view-section">
+
+            <div class="view-section-heading">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h2>
+                        Endereço
+                    </h2>
+
+                    <p>
+                        Informações de localização cadastradas para o imóvel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="information-grid">
+
+                <div class="information-item">
+
+                    <span>
+                        CEP
+                    </span>
+
+                    <strong id="cep">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Rua
+                    </span>
+
+                    <strong id="rua">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Número
+                    </span>
+
+                    <strong id="numero">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Complemento
+                    </span>
+
+                    <strong id="complemento">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Bairro
+                    </span>
+
+                    <strong id="bairro">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Cidade
+                    </span>
+
+                    <strong id="cidade">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        UF
+                    </span>
+
+                    <strong id="uf">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESCRIÇÃO -->
+
+        <section class="view-section">
+
+            <div class="view-section-heading">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h2>
+                        Descrição
+                    </h2>
+
+                    <p>
+                        Texto exibido na página pública do imóvel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="description-content" id="descricao">
+                —
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES INTERNAS -->
+
+        <section class="view-section internal-section">
+
+            <div class="view-section-heading">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <div>
+
+                    <h2>
+                        Informações internas
+                    </h2>
+
+                    <p>
+                        Dados disponíveis somente na área administrativa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="information-grid">
+
+                <div class="information-item">
+
+                    <span>
+                        Proprietário
+                    </span>
+
+                    <strong id="nomeProprietario">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span>
+                        Telefone
+                    </span>
+
+                    <a id="telefoneProprietario" class="telefone-whatsapp" href="#" target="_blank"
+                        rel="noopener noreferrer">
+                        —
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="internal-notes">
+
+                <span>
+                    Anotações internas
+                </span>
+
+                <p id="anotacoesInternas">
+                    —
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONFIGURAÇÕES -->
+
+        <section class="view-section">
+
+            <div class="view-section-heading">
+
+                <span class="section-number">
+                    05
+                </span>
+
+                <div>
+
+                    <h2>
+                        Configurações
+                    </h2>
+
+                    <p>
+                        Situação atual deste imóvel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="status-grid">
+
+                <div class="status-item">
+
+                    <span>
+                        Disponível
+                    </span>
+
+                    <strong id="disponivel">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="status-item">
+
+                    <span>
+                        Destaque
+                    </span>
+
+                    <strong id="destaque">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="status-item">
+
+                    <span>
+                        Aceita permuta
+                    </span>
+
+                    <strong id="permuta">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMAGENS -->
+
+        <section class="view-section">
+
+            <div class="view-section-heading">
+
+                <span class="section-number">
+                    06
+                </span>
+
+                <div>
+
+                    <h2>
+                        Imagens
+                    </h2>
+
+                    <p>
+                        Imagens cadastradas para este imóvel.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="property-images-grid" id="property-images"></div>
+
+        </section>
+
+    </main>
+
+
+    <div class="feedback-modal-overlay" id="feedback-modal">
+
+        <div class="feedback-modal">
+
+            <div class="feedback-modal-icon">
+                !
+            </div>
+
+            <h2>
+                Não foi possível carregar
+            </h2>
+
+            <p id="feedback-message">
+                Ocorreu um erro ao carregar o imóvel.
+            </p>
+
+            <a href="dashboard.html" class="feedback-modal-button">
+                Voltar ao painel
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script src="../config.js"></script>
+    <script src="visualizar-imovel.js"></script>
+
+</body>
+
+</html>

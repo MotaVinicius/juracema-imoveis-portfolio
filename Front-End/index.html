@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home | Juracema Mota Imóveis</title>
+
+    <link
+    rel="canonical"
+    href="https://juracemamotaimoveis.com.br/"
+>
+
+    <meta name="description" content="Confira imóveis disponíveis em Indaiatuba e região.">
+
+    <meta property="og:title" content="Juracema Mota Imóveis">
+
+    <meta property="og:description" content="Encontre seu próximo imóvel com atendimento personalizado.">
+
+    <meta property="og:image" content="https://juracemamotaimoveis.com.br/Imagens/placeholder-imovel.png">
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:url" content="https://juracemamotaimoveis.com.br/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Juracema Mota Imóveis">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Imagens/FavIcon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            <img src="Imagens/LogoJM.png" alt="Juracema Mota Imóveis">
+        </div>
+
+        <nav class="nav" id="mobile-nav">
+            <a href="#inicio">Início</a>
+            <a href="/imoveis">Imóveis</a>
+            <a href="/sobre">Sobre mim</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <a href="#contato" class="header-button">
+            Fale comigo
+        </a>
+
+        <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    CONSULTORIA IMOBILIÁRIA
+                </p>
+
+                <h1>
+                    Encontre um lugar
+                    <span>para chamar de lar.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Encontre seu próximo imóvel com atendimento
+                    personalizado, transparência e segurança
+                    em cada etapa.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#imoveis" class="button-primary">
+                        Ver imóveis
+                        <span>→</span>
+                    </a>
+
+                    <a href="#contato" class="button-secondary">
+                        Entre em contato
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO DA CORRETORA -->
+
+            <div class="hero-image-container">
+
+                <div class="image-background"></div>
+
+                <img src="Imagens/Juracema.jpeg" alt="Corretora de imóveis" class="hero-image">
+
+                <div class="experience-card">
+
+                    <strong>+15</strong>
+
+                    <span>
+                        anos de experiência
+                    </span>
+
+                </div>
+
+                <div class="creci-card">
+
+                    <span>CRECI</span>
+                    <strong>131690-F</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH -->
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <div class="search-title">
+                    <span>Encontre seu imóvel</span>
+                    <small>O imóvel ideal está mais perto do que você imagina.</small>
+                </div>
+
+                <div class="search-fields">
+
+                    <select id="home-filter-tipo">
+
+                        <option value="">
+                            Tipo de imóvel
+                        </option>
+
+                        <option value="APARTAMENTO">
+                            Apartamento
+                        </option>
+
+                        <option value="CASA">
+                            Casa
+                        </option>
+
+                        <option value="TERRENO">
+                            Terreno
+                        </option>
+
+                        <option value="COMERCIAL">
+                            Comercial
+                        </option>
+
+                        <option value="CHACARA">
+                            Chácara
+                        </option>
+
+                        <option value="SOBRADO">
+                            Sobrado
+                        </option>
+
+                    </select>
+
+
+                    <input type="text" id="home-filter-localizacao" placeholder="Cidade ou bairro">
+
+
+                    <button type="button" id="home-search-button">
+                        Buscar
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- IMÓVEIS -->
+
+        <section class="properties" id="imoveis">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        SELEÇÃO ESPECIAL
+                    </p>
+
+                    <h2>
+                        Imóveis em destaque
+                    </h2>
+                </div>
+
+                <a href="/imoveis">
+                    Ver todos →
+                </a>
+
+            </div>
+
+
+            <div class="featured-carousel">
+
+                <button class="carousel-button carousel-prev" id="carousel-prev" aria-label="Imóveis anteriores">
+                    <img src="Imagens/left.png" alt="Anterior">
+                </button>
+
+                <div class="featured-carousel-viewport">
+
+                    <div class="property-grid" id="featured-properties"></div>
+
+                </div>
+
+                <button class="carousel-button carousel-next" id="carousel-next" aria-label="Próximos imóveis">
+                    <img src="Imagens/right.png" alt="Próximo">
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+
+        <section class="about" id="sobre">
+
+            <div class="about-image">
+
+                <img src="Imagens/JuracemaPerfil.jpeg" alt="Sua corretora de imóveis">
+
+            </div>
+
+            <div class="about-content">
+
+                <p class="eyebrow">
+                    SOBRE MIM
+                </p>
+
+                <h2>
+                    Mais do que encontrar
+                    imóveis, eu ajudo você
+                    a encontrar o lugar certo.
+                </h2>
+
+                <p>
+                    Comprar ou vender um imóvel é uma decisão
+                    importante. Por isso, meu trabalho vai muito
+                    além de apresentar propriedades.
+                </p>
+
+                <p>
+                    Acompanho cada etapa do processo, buscando
+                    oferecer um atendimento próximo, transparente
+                    e personalizado.
+                </p>
+
+                <a href="/sobre" class="button-primary">
+                    Conheça meu trabalho →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIFERENCIAIS -->
+
+        <section class="features">
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    POR QUE ESCOLHER MEU ATENDIMENTO
+                </p>
+
+                <h2>
+                    Um atendimento pensado em você
+                </h2>
+
+            </div>
+
+
+            <div class="features-grid">
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Atendimento personalizado
+                    </h3>
+
+                    <p>
+                        Entendo suas necessidades para encontrar
+                        imóveis realmente alinhados ao seu perfil.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Conhecimento da região
+                    </h3>
+
+                    <p>
+                        Experiência e conhecimento do mercado
+                        imobiliário local.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Segurança
+                    </h3>
+
+                    <p>
+                        Acompanhamento durante todas as etapas
+                        da negociação.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta" id="contato">
+
+            <div>
+
+                <p class="eyebrow">
+                    VAMOS CONVERSAR?
+                </p>
+
+                <h2>
+                    Seu próximo imóvel
+                    pode começar com uma conversa.
+                </h2>
+
+                <p>
+                    Entre em contato e conte o que você está procurando.
+                </p>
+
+                <a href="https://wa.me/5519993316550?text=Olá!%20Vim%20pelo%20Site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20imóveis."
+                    class="button-light" target="_blank" rel="noopener noreferrer">
+                    Falar pelo WhatsApp →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            JURACEMA MOTA IMÓVEIS
+        </div>
+
+        <div>
+            <span>CRECI 131690-F</span>
+            <span>Indaiatuba • São Paulo</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="https://www.instagram.com/juracema_mota_imoveis" target="_blank"><img
+                    src="Imagens/instagram-96.png" alt="Instagram Icon"> Instagram</a>
+            <a href="https://wa.me/5519993316550?text=Olá!%20Vim%20pelo%20Site.%20Gostaria%20de%20saber%20mais%20sobre%20os%20imóveis."
+                target="_blank"><img src="Imagens/whatsapp-96.png" alt="WhastApp Icon"> WhatsApp</a>
+        </div>
+
+    </footer>
+    <script src="config.js"></script>
+    <script src="menu.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

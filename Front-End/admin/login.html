@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <base href="/admin/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Área Administrativa | Juracema Mota Imóveis</title>
+
+    <meta property="og:image" content="https://juracemamotaimoveis.com.br/Imagens/placeholder-imovel.png">
+    <meta property="og:description" content="Pagina de login da área administrativa.">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="../Imagens/FavIcon.png" type="image/x-icon">
+
+</head>
+
+
+<body>
+
+    <main class="login-page">
+
+        <!-- LADO ESQUERDO -->
+
+        <section class="login-brand">
+
+            <div class="brand-content">
+
+                <img
+                    src="../Imagens/LogoJM.png"
+                    alt="Juracema Mota Imóveis"
+                    class="brand-logo"
+                >
+
+                <p class="eyebrow">
+                    ÁREA ADMINISTRATIVA
+                </p>
+
+                <h1>
+                    Gestão dos seus
+                    <span>imóveis.</span>
+                </h1>
+
+                <p class="brand-description">
+                    Gerencie seus imóveis, atualize informações
+                    e mantenha seu portfólio sempre atualizado.
+                </p>
+
+            </div>
+
+            <div class="brand-footer">
+
+                <span>
+                    CRECI 131690-F
+                </span>
+
+                <span>
+                    Indaiatuba • São Paulo
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- LADO DIREITO -->
+
+        <section class="login-container">
+
+            <div class="login-box">
+
+                <div class="login-header">
+
+                    <p class="eyebrow">
+                        BEM-VINDA
+                    </p>
+
+                    <h2>
+                        Acesse sua conta
+                    </h2>
+
+                    <p>
+                        Entre para gerenciar seus imóveis.
+                    </p>
+
+                </div>
+
+
+                <form id="login-form">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Senha
+                            </label>
+
+                        </div>
+
+                        <div class="password-input">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Digite sua senha"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="toggle-password"
+                                class="toggle-password"
+                                aria-label="Mostrar senha"
+                            >
+                                Mostrar
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="login-message"
+                        class="login-message"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Entrar
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <a
+                    href="../index.html"
+                    class="back-link"
+                >
+                    ← Voltar para o site
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../config.js"></script>
+    <script src="login.js"></script>
+
+</body>
+
+</html>

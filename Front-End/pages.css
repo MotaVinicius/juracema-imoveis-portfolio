@@ -1,0 +1,983 @@
+/* =========================================
+   PÁGINAS INTERNAS
+========================================= */
+
+
+/* =========================================
+   HERO - SOBRE
+========================================= */
+
+.page-hero {
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 8%;
+
+    background: #ebe6dc;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.page-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(181, 155, 114, .35);
+
+    border-radius: 50%;
+
+    right: -150px;
+    top: -200px;
+}
+
+
+.page-hero-content {
+
+    max-width: 850px;
+
+    animation: fadeUp 1s ease forwards;
+}
+
+
+.page-hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-weight: 400;
+
+    font-size: clamp(48px, 6vw, 76px);
+
+    line-height: 1.08;
+
+}
+
+
+.page-hero h1 span {
+
+    display: block;
+
+    color: var(--accent);
+}
+
+
+.page-hero p:not(.eyebrow) {
+
+    max-width: 600px;
+
+    margin: 30px auto 0;
+
+    color: var(--gray);
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================
+   SOBRE
+========================================= */
+
+.about-page {
+
+    padding: 140px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+    background: white;
+}
+
+
+.about-page-image {
+
+    height: 650px;
+
+    position: relative;
+}
+
+
+.about-page-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80%;
+
+    height: 90%;
+
+    background: #e8e1d5;
+
+    left: -30px;
+
+    top: -30px;
+}
+
+
+.about-page-image img {
+
+    width: 72%;
+
+    height: 90%;
+
+    object-fit: cover;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.about-page-content {
+
+    max-width: 550px;
+}
+
+
+.about-page-content h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+
+.about-page-content p:not(.eyebrow) {
+
+    color: var(--gray);
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+.about-signature {
+
+    border-left: 2px solid var(--accent);
+
+    padding-left: 20px;
+
+    margin-top: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.about-signature span {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--gray);
+}
+
+
+.about-signature strong {
+
+    font-family: "Playfair Display", serif;
+
+    font-weight: 400;
+
+    font-size: 20px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   NÚMEROS
+========================================= */
+
+.numbers-section {
+
+    padding: 80px 8%;
+
+    background: var(--dark);
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    text-align: center;
+}
+
+
+.number-item {
+
+    border-right: 1px solid #41413e;
+
+    padding: 20px;
+}
+
+
+.number-item:last-child {
+
+    border-right: none;
+}
+
+
+.number-item strong {
+
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    color: #c6ad87;
+}
+
+
+.number-item span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   VALORES
+========================================= */
+
+.values-section {
+
+    padding: 130px 8%;
+}
+
+
+.values-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    margin-top: 70px;
+}
+
+
+.value-card {
+
+    padding: 30px;
+
+    border: 1px solid var(--light-gray);
+
+    background: white;
+
+    min-height: 280px;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.value-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .07);
+}
+
+
+.value-card>span {
+
+    font-family: "Playfair Display", serif;
+
+    color: var(--accent);
+
+    font-size: 18px;
+}
+
+
+.value-card h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    margin: 50px 0 15px;
+}
+
+
+.value-card p {
+
+    color: var(--gray);
+
+    line-height: 1.7;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   HERO - IMÓVEIS
+========================================= */
+
+.properties-hero {
+
+    padding: 110px 8% 90px;
+
+    background: #ebe6dc;
+
+    text-align: center;
+}
+
+
+.properties-hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 5vw, 68px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+
+.properties-hero h1 span {
+
+    display: block;
+
+    color: var(--accent);
+}
+
+
+.properties-hero p:not(.eyebrow) {
+
+    color: var(--gray);
+
+    margin-top: 25px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BUSCA DE IMÓVEIS
+========================================= */
+
+.property-search {
+
+    padding: 0 8%;
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: -35px;
+}
+
+
+.property-search-inner {
+
+    background: white;
+
+    padding: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1.5fr 1fr auto;
+
+    gap: 12px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .08);
+}
+
+
+.search-option {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.search-option label {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--gray);
+}
+
+
+.search-option input,
+.search-option select {
+
+    width: 100%;
+
+    height: 45px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--light-gray);
+
+    background: white;
+
+    font-family: inherit;
+
+    color: var(--black);
+
+    outline: none;
+}
+
+
+.search-button {
+
+    align-self: end;
+
+    height: 45px;
+
+    padding: 0 25px;
+
+    background: var(--black);
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: background .3s ease;
+}
+
+
+.search-button:hover {
+
+    background: var(--accent);
+}
+
+
+/* =========================================
+   TODOS OS IMÓVEIS
+========================================= */
+
+.all-properties {
+
+    padding: 120px 8%;
+}
+
+
+.properties-top {
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    margin-bottom: 50px;
+}
+
+
+.properties-top h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 45px;
+
+    font-weight: 400;
+}
+
+
+.property-count {
+
+    color: var(--gray);
+
+    font-size: 12px;
+}
+
+
+
+.property-button:hover {
+
+    background: var(--accent);
+
+    transform: translateY(-2px);
+
+}
+
+/* =========================
+   IMÓVEL INDISPONÍVEL
+========================= */
+
+.property-unavailable {
+    opacity: 0.72;
+}
+
+
+.property-unavailable .property-image img {
+    filter: grayscale(70%);
+}
+
+
+.property-status-unavailable {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    background: #1d1d1b;
+    color: white;
+
+    padding: 8px 12px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   MENSAGENS DA LISTAGEM
+========================= */
+
+.properties-message {
+    grid-column: 1 / -1;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+
+.properties-error {
+    color: #8a3d3d;
+}
+
+
+/* =========================================
+   PAGINAÇÃO
+========================================= */
+
+.pagination {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 70px;
+}
+
+
+.pagination button {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: white;
+
+    border: 1px solid var(--light-gray);
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: .3s ease;
+}
+
+
+.pagination button:hover,
+.pagination button.active {
+
+    background: var(--black);
+
+    color: white;
+
+    border-color: var(--black);
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 1366px) and (min-width: 1001px) {
+
+    /* =========================
+       HERO - SOBRE
+    ========================= */
+
+    .page-hero {
+        min-height: 440px;
+        padding: 60px 6%;
+    }
+
+    .page-hero h1 {
+        font-size: clamp(42px, 4.5vw, 58px);
+    }
+
+    .page-hero p:not(.eyebrow) {
+        margin-top: 22px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* =========================
+       SOBRE
+    ========================= */
+
+    .about-page {
+        padding: 75px 6%;
+        gap: 50px;
+    }
+
+    .about-page-image {
+        height: 500px;
+    }
+
+    .about-page-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .about-page-content h2 {
+        font-size: 40px;
+        margin-bottom: 22px;
+    }
+
+    .about-page-content p:not(.eyebrow) {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 16px;
+    }
+
+    .about-signature {
+        margin-top: 25px;
+    }
+
+    /* =========================
+       NÚMEROS
+    ========================= */
+
+    .numbers-section {
+        padding: 55px 6%;
+    }
+
+    .number-item {
+        padding: 15px;
+    }
+
+    .number-item strong {
+        font-size: 38px;
+    }
+
+    .number-item span {
+        font-size: 11px;
+    }
+
+    /* =========================
+       VALORES
+    ========================= */
+
+    .values-section {
+        padding: 80px 6%;
+    }
+
+    .values-grid {
+        gap: 18px;
+        margin-top: 45px;
+    }
+
+    .value-card {
+        padding: 24px;
+        min-height: 220px;
+    }
+
+    .value-card h3 {
+        font-size: 21px;
+        margin: 35px 0 12px;
+    }
+
+    .value-card p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* =========================
+       HERO - IMÓVEIS
+    ========================= */
+
+    .properties-hero {
+        padding: 75px 6% 65px;
+    }
+
+    .properties-hero h1 {
+        font-size: clamp(40px, 4.2vw, 54px);
+    }
+
+    .properties-hero p:not(.eyebrow) {
+        margin-top: 18px;
+        font-size: 14px;
+    }
+
+    /* =========================
+       BUSCA DE IMÓVEIS
+    ========================= */
+
+    .property-search {
+        padding: 0 6%;
+        margin-top: -28px;
+    }
+
+    .property-search-inner {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .search-option input,
+    .search-option select {
+        height: 42px;
+    }
+
+    .search-button {
+        height: 42px;
+        padding: 0 20px;
+    }
+
+    /* =========================
+       TODOS OS IMÓVEIS
+    ========================= */
+
+    .all-properties {
+        padding: 80px 6%;
+    }
+
+    .properties-top {
+        margin-bottom: 35px;
+    }
+
+    .properties-top h2 {
+        font-size: 38px;
+    }
+
+    .pagination {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .about-page {
+
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+
+    .about-page-image {
+
+        height: 550px;
+
+        max-width: 650px;
+    }
+
+
+    .numbers-section {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .number-item:nth-child(2) {
+
+        border-right: none;
+    }
+
+
+    .values-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .property-search-inner {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .search-button {
+
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .page-hero {
+
+        min-height: 450px;
+
+        padding: 60px 5%;
+    }
+
+
+    .about-page {
+
+        padding: 90px 5%;
+    }
+
+
+    .about-page-image {
+        height: 445px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .about-page-image::before {
+        width: 92%;
+        height: 92%;
+
+        left: -10px;
+        top: -15px;
+    }
+
+
+    .about-page-image img {
+        width: 92%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    .about-page-content h2 {
+
+        font-size: 42px;
+    }
+
+
+    .numbers-section {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .number-item {
+
+        border-right: none;
+
+        border-bottom: 1px solid #41413e;
+    }
+
+
+    .number-item:last-child {
+
+        border-bottom: none;
+    }
+
+
+    .values-section {
+
+        padding: 90px 5%;
+    }
+
+
+    .values-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .properties-hero {
+
+        padding: 80px 5%;
+    }
+
+
+    .property-search {
+
+        padding: 0 5%;
+    }
+
+
+    .property-search-inner {
+
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+
+    .all-properties {
+
+        padding: 90px 5%;
+    }
+
+
+    .properties-top {
+
+        display: block;
+    }
+
+
+    .property-count {
+
+        display: block;
+
+        margin-top: 15px;
+    }
+
+}
